@@ -1,25 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="3" total="4" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
+    <line>
+      <![CDATA[<br><img src=' C:\Users\OROVI~1\AppData\Local\Temp\screenshot8189360590356074723.png' height='200' widht='200'/><br>]]>
+    </line>
+    <line>
+      <![CDATA[Epic sadface: Username is required]]>
+    </line>
+    <line>
+      <![CDATA[<br><img src=' C:\Users\OROVI~1\AppData\Local\Temp\screenshot1812435110340116733.png' height='200' widht='200'/><br>]]>
+    </line>
+    <line>
+      <![CDATA[Epic sadface: Username is required]]>
+    </line>
+    <line>
+      <![CDATA[<br><img src=' C:\Users\OROVI~1\AppData\Local\Temp\screenshot43011308879001702.png' height='200' widht='200'/><br>]]>
+    </line>
+    <line>
+      <![CDATA[Epic sadface: Password is required]]>
+    </line>
   </reporter-output>
-  <suite name="Suite2" duration-ms="17111" started-at="2020-07-15T13:16:06 CEST" finished-at="2020-07-15T13:16:23 CEST">
+  <suite name="Default suite" duration-ms="45526" started-at="2020-07-23T19:30:25 CEST" finished-at="2020-07-23T19:31:11 CEST">
     <groups>
     </groups>
-    <test name="login" duration-ms="17111" started-at="2020-07-15T13:16:06 CEST" finished-at="2020-07-15T13:16:23 CEST">
+    <test name="Default test" duration-ms="45526" started-at="2020-07-23T19:30:25 CEST" finished-at="2020-07-23T19:31:11 CEST">
       <class name="sdemo.LoginTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:sdemo.LoginTest@694e1548]" name="setUp" is-config="true" duration-ms="6729" started-at="2020-07-15T13:16:06 CEST" finished-at="2020-07-15T13:16:13 CEST">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:sdemo.LoginTest@394e1a0f]" name="setUp" is-config="true" duration-ms="10459" started-at="2020-07-23T19:30:25 CEST" finished-at="2020-07-23T19:30:36 CEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="login()[pri:3, instance:sdemo.LoginTest@694e1548]" name="login" duration-ms="9516" started-at="2020-07-15T13:16:13 CEST" finished-at="2020-07-15T13:16:23 CEST">
+        <test-method status="PASS" signature="loginWithoutUserAndPass()[pri:0, instance:sdemo.LoginTest@394e1a0f]" name="loginWithoutUserAndPass" duration-ms="3915" started-at="2020-07-23T19:30:36 CEST" finished-at="2020-07-23T19:30:40 CEST">
+          <reporter-output>
+            <line>
+              <![CDATA[<br><img src=' C:\Users\OROVI~1\AppData\Local\Temp\screenshot8189360590356074723.png' height='200' widht='200'/><br>]]>
+            </line>
+            <line>
+              <![CDATA[Epic sadface: Username is required]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loginWithoutUserAndPass -->
+        <test-method status="PASS" signature="loginWithoutUsername()[pri:1, instance:sdemo.LoginTest@394e1a0f]" name="loginWithoutUsername" duration-ms="3993" started-at="2020-07-23T19:30:40 CEST" finished-at="2020-07-23T19:30:44 CEST">
+          <reporter-output>
+            <line>
+              <![CDATA[<br><img src=' C:\Users\OROVI~1\AppData\Local\Temp\screenshot1812435110340116733.png' height='200' widht='200'/><br>]]>
+            </line>
+            <line>
+              <![CDATA[Epic sadface: Username is required]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loginWithoutUsername -->
+        <test-method status="PASS" signature="loginWithoutPassword()[pri:2, instance:sdemo.LoginTest@394e1a0f]" name="loginWithoutPassword" duration-ms="7615" started-at="2020-07-23T19:30:44 CEST" finished-at="2020-07-23T19:30:51 CEST">
+          <reporter-output>
+            <line>
+              <![CDATA[<br><img src=' C:\Users\OROVI~1\AppData\Local\Temp\screenshot43011308879001702.png' height='200' widht='200'/><br>]]>
+            </line>
+            <line>
+              <![CDATA[Epic sadface: Password is required]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- loginWithoutPassword -->
+        <test-method status="PASS" signature="login()[pri:3, instance:sdemo.LoginTest@394e1a0f]" name="login" duration-ms="18313" started-at="2020-07-23T19:30:51 CEST" finished-at="2020-07-23T19:31:10 CEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:sdemo.LoginTest@694e1548]" name="tearDown" is-config="true" duration-ms="790" started-at="2020-07-15T13:16:23 CEST" finished-at="2020-07-15T13:16:23 CEST">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:sdemo.LoginTest@394e1a0f]" name="tearDown" is-config="true" duration-ms="1090" started-at="2020-07-23T19:31:10 CEST" finished-at="2020-07-23T19:31:11 CEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- sdemo.LoginTest -->
-    </test> <!-- login -->
-  </suite> <!-- Suite2 -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

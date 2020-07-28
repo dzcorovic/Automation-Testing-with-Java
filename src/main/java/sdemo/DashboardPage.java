@@ -9,14 +9,15 @@ public class DashboardPage {
 
 	private WebDriver driver;
 
-	public DashboardPage(WebDriver driver) {
-		this.driver = driver;
-	}
-
 	private By bikelight = By.xpath("//*[@id=\"inventory_container\"]/div/div[2]/div[3]/button");
 	private By onesie = By.xpath("//*[@id=\"inventory_container\"]/div/div[5]/div[3]/button");
 	private By cart = By.xpath("//a[@href=\"./cart.html\"]");
+	private By item = By.xpath("//span[@class=\"fa-layers-counter shopping_cart_badge\"]");
 
+	public DashboardPage(WebDriver driver) {
+		this.driver = driver;
+	}
+	
 	public void addToCart1() {
 		driver.findElement(bikelight).click();
 	}
@@ -26,7 +27,7 @@ public class DashboardPage {
 	}
 
 	public String CheckNumOfItem() {
-		String num = driver.findElement(By.xpath("//span[@class=\"fa-layers-counter shopping_cart_badge\"]")).getText();
+		String num = driver.findElement(item).getText();
 		return num;
 	}
 

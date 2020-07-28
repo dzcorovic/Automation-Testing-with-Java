@@ -1,61 +1,57 @@
 package sdemo;
 
-import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(sdemo.ListenerTest.class)
 public class LoginTest extends Base {
 
-	@BeforeClass
-	public void setUp() {
-		initialization();
-	}
-
-	@Test(priority = 0)
-	public void loginWithoutUserAndPass() throws InterruptedException {
-		HomePage home = new HomePage(driver);
+    HomePage home = hPage();
+	
+	@Test(priority=0)
+	public void loginWithoutUserAndPass() throws InterruptedException 
+	{
+		HomePage home = hPage();
 		home.clickSubmitButton();
 		Thread.sleep(3000);
 		takeScreenshot("test1");
-		System.out.println(driver.findElement(By.xpath("//h3[@data-test=\"error\"]")).getText());
-		driver.navigate().refresh();
+		System.out.println(home.getMessage());
+		home.refresh();
 	}
+	
 
 	@Test(priority = 1)
-	public void loginWithoutUsername() throws InterruptedException {
-		HomePage home = new HomePage(driver);
+	public void loginWithoutUsername() throws InterruptedException 
+	{
+		HomePage home = hPage();
 		home.fillPasswordField("secret_sauce");
 		home.clickSubmitButton();
 		Thread.sleep(3000);
 		takeScreenshot("test2");
-		System.out.println(driver.findElement(By.xpath("//h3[@data-test=\"error\"]")).getText());
-		driver.navigate().refresh();
+		System.out.println(home.getMessage());
+		home.refresh();
 	}
 
 	@Test(priority = 2)
-	public void loginWithoutPassword() throws InterruptedException {
-		HomePage home = new HomePage(driver);
+	public void loginWithoutPassword() throws InterruptedException
+	{
+		HomePage home = hPage();
 		home.fillUsernameField("standard_user");
 		Thread.sleep(3000);
 		home.clickSubmitButton();
 		Thread.sleep(3000);
 		takeScreenshot("test3");
-		System.out.println(driver.findElement(By.xpath("//h3[@data-test=\"error\"]")).getText());
-		driver.navigate().refresh();
+		System.out.println(home.getMessage());
+		home.refresh();
 
 	}
 
 	@Test(priority = 3)
-	public void login() throws InterruptedException {
-
-		HomePage home = new HomePage(driver);
-		home.login("standard_user", "secret_sauce");
-
-		DashboardPage dpage = new DashboardPage(driver);
+	public void login() throws InterruptedException
+	{
+		HomePage home = hPage();
+		DashboardPage dpage = home.login1("standard_user", "secret_sauce");
 		dpage.addToCart1();
 		Assert.assertEquals(dpage.CheckNumOfItem(), "1", "Number of items in cart are not 1.");
 		Thread.sleep(2000);
@@ -63,8 +59,7 @@ public class LoginTest extends Base {
 		Assert.assertEquals(dpage.CheckNumOfItem(), "2", "Number of items in cart are not 2.");
 		Thread.sleep(2000);
 
-		dpage.ClickOnCartButton();
-		CartPage cpage = new CartPage(driver);
+		CartPage cpage = dpage.ClickOnCartButton();
 		Thread.sleep(2000);
 		Assert.assertEquals(cpage.bikeLightName(), "Sauce Labs Bike Light",
 				"Sauce Labs Bike Light is not added on your cart.");
@@ -78,9 +73,5 @@ public class LoginTest extends Base {
 		System.out.println("Sauce Labs Bike Light item  has price 9.99 and quantity 1");
 		System.out.println("Sauce Labs Onesie item has price 7.99 and quanity 1");
 	}
-
-	@AfterClass
-	public void tearDown() {
-		driver.quit();
-	}
+	
 }

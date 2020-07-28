@@ -5,10 +5,8 @@
     <classes>
       <class name="sdemo.LoginTest">
         <methods>
-          <include name="loginWithoutPassword"/>
-          <include name="loginWithoutUserAndPass"/>
+          <include name="login"/>
           <include name="setUp"/>
-          <include name="loginWithoutUsername"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- sdemo.LoginTest -->

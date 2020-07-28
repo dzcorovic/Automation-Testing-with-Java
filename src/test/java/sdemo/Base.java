@@ -11,14 +11,16 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Reporter;
-import org.testng.annotations.Listeners;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
-@Listeners(sdemo.ListenerTest.class)
+
 public class Base {
 
 	public WebDriver driver;
-
-	public void initialization() {
+    
+	@BeforeClass
+	public void setUp() {
 
 		System.setProperty("webdriver.chrome.driver",
 				System.getProperty("user.dir") + "\\executable\\chromedriver.exe");
@@ -26,6 +28,12 @@ public class Base {
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("https://www.saucedemo.com/");
+	}
+	
+	public HomePage hPage() 
+	{  
+		 HomePage home = new HomePage(driver);
+		 return home;
 	}
 
 	public void takeScreenshot(String filename) {
@@ -40,5 +48,10 @@ public class Base {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	@AfterClass
+	public void tearDown() {
+		driver.quit();
 	}
 }
